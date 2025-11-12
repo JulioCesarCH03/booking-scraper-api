@@ -7,3 +7,5 @@ services:
     envVars:
       - key: PYTHONUNBUFFERED
         value: 1
+    plan: free # O el plan que estés usando
+    runtimeVersion: "3.11" # <--- FORZAMOS PYTHON 3.11
