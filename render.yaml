@@ -2,10 +2,11 @@ services:
   - type: web
     name: booking-scraper
     env: python
-    buildCommand: pip install -r requirements.txt && playwright install chromium
-    startCommand: python main.py
+    buildCommand: pip install -r requirements.txt && playwright install-deps && playwright install chromium
+    startCommand: playwright install chromium && python main.py
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
       - key: PYTHONUNBUFFERED
         value: 1
-    plan: free # O el plan que estés usando
-    runtimeVersion: "3.11" # <--- FORZAMOS PYTHON 3.11
+
